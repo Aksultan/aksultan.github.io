@@ -1,1 +1,289 @@
-<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=icon href=favicon.ico><title>postmananger</title><link href=css/app.9b805752.css rel=preload as=style><link href=js/app.a16735f2.js rel=preload as=script><link href=js/chunk-vendors.456a85a4.js rel=preload as=script><link href=css/app.9b805752.css rel=stylesheet></head><body><noscript><strong>We're sorry but postmananger doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id=app></div><script src=js/chunk-vendors.456a85a4.js></script><script src=js/app.a16735f2.js></script></body></html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./master.css">
+        <link rel="shortcut icon" href="./assets/images/jetlend.svg" type="image/x-icon">  
+        <title>Jetlend</title>\
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <header>
+            <div class="wrapper header-wrapper">
+                <div class="logo">
+                    <img src="./assets/images/logo.svg" alt="jetlend logo">
+                </div>
+                <nav class="desktop-nav">
+                    <ul class="nav-items">
+                        <li>инвесторам</li>
+                        <li class="nav-item-active">предпринимателям</li>
+                        <li>о платформе</li>
+                        <li>новости</li>
+                    </ul>
+                    <button class="login-btn alt-btn">
+                        Войти
+                        <img src="./assets/images/login.svg" alt="">
+                    </button>
+                </nav>
+                <nav class="mobile-nav">
+                    <ul class="nav-items">
+                        <li>инвесторам</li>
+                        <li class="nav-item-active">предпринимателям</li>
+                        <li>о платформе</li>
+                        <li>новости</li>
+                    </ul>
+                    <button class="login-btn">
+                        Войти
+                        <img src="./assets/images/login.svg" alt="">
+                    </button>
+                </nav>
+                <button class="burger" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <div class="overlay" onclick="toggleMenu()"></div>
+        </header>
+        <main>
+            <section class="section-about">
+                <div class="wrapper wrapper-section-about">
+                    <div class="section-about-sponsors">
+                        <figure>
+                            <img src="./assets/images/bank.svg" alt="логотип Банка России"/>
+                            <img src="./assets/images/sk.svg" alt="логотип sk"/>
+                        </figure>
+                    </div>
+                    <div class="section-about-category">
+                        <ul class="section-about-category-items">
+                            <li class="active">Обзор</li>
+                            <li>Условия</li>
+                            <li>Вопросы</li>
+                        </ul>
+                    </div>
+                    <h1>
+                        Кредит на пополнение оборотных средств
+                    </h1>
+                    <div class="section-about-options">
+                        <ul>
+                           <li>Сумма до 5 000 000 ₽</li>
+                           <li>Ставка от 11% годовых</li> 
+                           <li>Срок до 12 месяцев</li>  
+                        </ul>
+                    </div>
+                    <button class="section-about-btn btn">
+                        Получить кредит
+                    </button>
+                </div>
+            </section>
+            <div class="wrapper wrapper-section-advantages">
+                <section class="section-advantages">
+                    <h2>
+                        Преимущества оборотного кредита в JetLend
+                    </h2>
+                    <div class="section-advantages-types">
+                        <div>
+                            <h3>Решение за 10 секунд</h3>
+                            <p>Просто загрузите два документы и мы оценим ваш бизнес почти моментально</p>
+                        </div>
+                        <div>
+                            <h3>Всё онлайн</h3>
+                            <p>Без поездок в офис - оформите кредит в личном кабинете</p>
+                        </div>
+                        <div>
+                            <h3>Без залога</h3>
+                            <p>Одобряем кредит для бизнеса на основании оборотов по расчетным счетам</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <section class="section-info">
+                <div class="wrapper wrapper-section-info">
+                    <h2>
+                        Как получить оборотный кредит
+                    </h2>
+                    <div class="section-info-steps">
+                        <ul>
+                            <li>
+                                <div class="list-icon active">1</div>
+                                <span>Пройдите регистрацию</span>
+                            </li>
+                            <li>
+                                <div class="list-icon">2</div>
+                                <span>Получите предварительное решение</span>
+                            </li>
+                            <li>
+                                <div class="list-icon">3</div>
+                                <span>Пройдите верификацию и получите деньги</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section-calculator">
+                <div class="wrapper wrapper-section-calculator">
+                    <h2>Калькулятор заемщика</h2>
+                    <div class="calculator">
+                        <div class="calculator-left-side">
+                            <div class="range-sum">
+                                <label for="sum">
+                                    Желаемая сумма кредита
+                                </label>
+                                <input type="text" value="50 000 ₽" id="sum" disabled/>
+                                <input type="range" id="sumrange" value="50000" min="500000" max="10000000" step="100000">
+                            </div>
+                            <div class="range-month">
+                                <label for="months">
+                                    Срок кредита
+                                </label>
+                                <input type="text" id="months" value="1" disabled/>
+                                <input type="range" id="summonths" value="1" min="1" max="12" step="1">
+                            </div>
+                        </div>
+                        <div class="calculator-right-side">
+                            <h5>Ежемесячный платеж</h4>
+                            <h4>52 525 <span>₽</span></h5>
+                                <hr/>
+                            <button class="alt-btn">Получить кредит</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section-partners">
+                <div class="wrapper wrapper-section-partners">
+                    <h2>
+                        СМИ о нас
+                        <a href="#">Наши партнеры</a>
+                    </h2>
+                    <div class="section-partners-list">
+                        <div class="section-partners-list-item">
+                            <img src="./assets/images/partners/forbes.svg" alt="лого forbes">
+                        </div>
+                        <div class="section-partners-list-item">
+                            <img src="./assets/images/partners/komersant.svg" alt="лого коммерсантъ">
+                        </div>
+                        
+                        <div class="section-partners-list-item">
+                            <img src="./assets/images/partners/rbk.svg" alt="лого rbk">
+                        </div>
+                        <div class="section-partners-list-item">
+                            <img src="./assets/images/partners/vedomosti.svg" alt="лого ведомости">
+                        </div>
+                        <div class="section-partners-list-item">
+                            <img src="./assets/images/partners/vc.ru.svg" alt="лого vc.ru">
+                        </div>
+                        <div class="section-partners-list-item">
+                            <img src="./assets/images/partners/republic.svg" alt="лого republic">
+                        </div>
+                        <div class="section-partners-list-item">
+                            <img src="./assets/images/partners/banki.ru.svg" alt="лого banki.ru">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section-who">
+                <div class="section-who-left">
+                    <img src="./assets/images/table.png" alt="стол" width="100%">
+                </div>
+                <div class="section-who-right">
+                    <div class="text">
+                        <h3>
+                            Jetlend — надежный партнер
+                        </h3>
+                        <p>
+                            Спонсорство искажает бренд. Диктат потребителя, как принято считать, обычно правомочен. Стоит отметить, что управление брендом исключительно экономит потребительский conversion rate, отвоевывая свою долю рынка. Повышение жизненных стандартов притягивает опрос, учитывая современные тенденции. Повторный контакт, в рамках сегодняшних воззрений, версифицирован. Селекция бренда традиционно консолидирует рейтинг.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <footer>
+                <div class="wrapper wrapper-footer">
+                    <div class="first-row">
+                        <div class="footer-logo-container">
+                            <img src="./assets/images/logo-inversed.svg" alt="логотип jetlend"/>
+                            <img src="./assets/images/arrow.svg" alt="anchor to the top" onclick="topFunction()">
+                        </div>
+                        <nav>
+                            <ul>
+                                <li>инвесторам</li>
+                                <li>предпринимателям</li>
+                                <li>партнерам</li>
+                            </ul>
+                            <ul>
+                                <li>документы</li>
+                                <li>о платформе</li>
+                                <li>новости</li>
+                            </ul>
+                        </nav>
+                        <p class="footer-text">
+                            Москва, территория инновационного центра «Сколково», ул. Нобеля, д. 5, эт/пом/раб 2/8/2
+                        </p>
+                        <button class="login-btn footer-btn alt-btn">
+                            Войти
+                            <img src="./assets/images/login.svg" alt="">
+                        </button>
+                        <p class="footer-text">
+                            © 2018 —2021 Все права защищены ООО «ДжетЛэнд», официальный сайт Лицензия ЦБ РФ №18
+                        </p>
+                    </div>
+                    <div class="second-row">
+                        <div class="socials">
+                            <img src="./assets/images/socials/facebook.svg" alt="facebook logo">
+                            <img src="./assets/images/socials/instagram.svg" alt="instagram logo">
+                            <img src="./assets/images/socials/youtube.svg" alt="youtube logo">
+                            <img src="./assets/images/socials/telegram.svg" alt="telegram logo">
+                        </div>
+                        <div class="sponsor-icons">
+                            <img src="./assets/images/bank.svg" alt="логотип Банка России" width="89.57">
+                            <img src="./assets/images/sk.svg" alt="логотип SK" width="32.54">
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </body>
+    <script>
+        var month = document.getElementById("months")
+        var sum = document.getElementById("sum")
+        var total = document.querySelector("h4")
+        document.getElementById("sumrange").addEventListener("input", function(){
+            let that = this;
+            colorTransition(that); 
+            sum.value = numberSpacing(this.value)+" ₽";
+            month.value&&sum.value?updateTotal():(total.value=0+" ₽");
+        });
+
+        document.getElementById("summonths").addEventListener("input", function(){
+            let that = this;
+            colorTransition(that); 
+            month.value = this.value;
+            month.value&&sum.value?updateTotal():(total.value=0+" ₽");
+        });
+
+        function updateTotal(){
+            //5.05%
+            total.textContent = numberSpacing(Math.floor(sum.value.replace(/\D+/g, '')/month.value+sum.value.replace(/\D+/g, '')*0.0505))+" ₽"
+        }
+
+        function numberSpacing(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        }
+
+        function colorTransition(that) {
+            var value = (that.value-that.min)/(that.max-that.min)*100
+            that.style.background = 'linear-gradient(to right, #0ED193 0%, #0ED193 ' + value + '%, transparent ' + value + '%, transparent 100%)'
+        };
+
+        function toggleMenu(){
+            setTimeout(()=>{
+                document.querySelector("body").classList.toggle("no-scroll");
+                document.querySelector(".mobile-nav").classList.toggle("mobile-nav-active");
+                document.querySelector(".overlay").classList.toggle("overlay-active");
+                document.querySelector(".burger").classList.toggle("burger-active");
+            }, 300)
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</html>
